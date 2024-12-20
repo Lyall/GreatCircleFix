@@ -257,6 +257,8 @@ void CVars()
                 [](SafetyHookContext& ctx) {
                     // Clear read-only flag (bit 15)
                     ctx.rax &= ~(1 << 15);
+                    // Clear command-line only flag (bit 14)
+                    ctx.rax &= ~(1 << 14);
                 });
         }
         else {
